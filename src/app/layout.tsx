@@ -11,6 +11,7 @@ import { ThemeProvider } from "@/components/providers";
 import { Toaster } from "@/components/ui/sonner";
 import { fontHeading, fontMono, fontSans } from "@/lib/fonts";
 import { absoluteUrl, cn } from "@/lib/utils";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
@@ -86,9 +87,22 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
               {children}
             </ThemeProvider>
             <Toaster />
+            <Scripts />
           </body>
         </html>
       </ClerkProvider>
     </>
+  );
+}
+
+function Scripts() {
+  return (
+    <div>
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2693740565974658"
+        crossOrigin="anonymous"
+      ></Script>
+    </div>
   );
 }
