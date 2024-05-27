@@ -102,7 +102,7 @@ function Scripts() {
         async
         src="https://www.googletagmanager.com/gtag/js?id=AW-11223491668"
       ></Script>
-      <Script>
+      <Script id="gtag">
         {`window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
