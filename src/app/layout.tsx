@@ -100,6 +100,17 @@ function Scripts() {
     <div>
       <Script
         async
+        src="https://www.googletagmanager.com/gtag/js?id=AW-11223491668"
+      ></Script>
+      <Script>
+        {`window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-11223491668');`}
+      </Script>
+      <Script
+        async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2693740565974658"
         crossOrigin="anonymous"
       ></Script>
