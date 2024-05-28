@@ -2,7 +2,7 @@ import { pgTable, serial, timestamp, varchar } from "drizzle-orm/pg-core";
 
 export const emailSubscriptions = pgTable("email_subscriptions", {
   id: serial("id").primaryKey(),
-  email: varchar("email", { length: 256 }),
+  email: varchar("email", { length: 256 }).unique(),
   createdAt: timestamp("created_at", { mode: "date", precision: 3 }).default(
     new Date(),
   ),

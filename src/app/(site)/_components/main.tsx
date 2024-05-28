@@ -24,7 +24,7 @@ export async function Main() {
           style={{ animationDelay: "0.40s", animationFillMode: "both" }}
         >
           <p className="text-foreground">
-            Sign up for early access to our beta!
+            Coming soon - Sign up for early access!
           </p>
           <SignupForm />
         </div>
