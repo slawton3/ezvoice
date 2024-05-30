@@ -63,38 +63,6 @@ export const Post = defineDocumentType(() => ({
   computedFields,
 }))
 
-export const Industry = defineDocumentType(() => ({
-  name: "Industry",
-  filePathPattern: `industries/**/*.mdx`,
-  contentType: "mdx",
-  fields: {
-    title: {
-      type: "string",
-      required: true,
-    },
-    description: {
-      type: "string",
-    },
-  },
-  computedFields,
-}))
-
-export const Docs = defineDocumentType(() => ({
-  name: "Industry",
-  filePathPattern: `docs/**/*.mdx`,
-  contentType: "mdx",
-  fields: {
-    title: {
-      type: "string",
-      required: true,
-    },
-    description: {
-      type: "string",
-    },
-  },
-  computedFields,
-}))
-
 export const Author = defineDocumentType(() => ({
   name: "Author",
   filePathPattern: `authors/**/*.mdx`,
@@ -137,7 +105,7 @@ export const Page = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: "./src/content",
-  documentTypes: [Post, Author, Page, Industry, Docs],
+  documentTypes: [Post, Author, Page],
   mdx: {
     // remarkPlugins: [remarkGfm],
     rehypePlugins: [

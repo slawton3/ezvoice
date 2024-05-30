@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "typecheck": "contentlayer build && tsc --noEmit",
+    "typecheck": "contentlayer2 build && tsc --noEmit",
     "format": "bun prettier . --write",
     "format:write": "prettier --write \"**/*.{ts,tsx,mdx}\" --cache",
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache",
@@ -93,6 +93,7 @@
   },
   "devDependencies": {
     "@clerk/types": "^4.5.1",
+    "@ianvs/prettier-plugin-sort-imports": "^4.2.1",
     "@types/eslint": "^8.56.10",
     "@types/node": "^20",
     "@types/react": "^18",

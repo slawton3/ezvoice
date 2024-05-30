@@ -1,13 +1,11 @@
-import { getCachedUser } from "@/lib/queries/user"
 import { SiteFooter } from "@/components/layouts/site-footer"
 import { SiteHeader } from "@/components/layouts/site-header"
+import { getCachedUser } from "@/lib/queries/user"
+import React from "react"
 
-interface SiteLayoutProps
-  extends React.PropsWithChildren<{
-    modal: React.ReactNode
-  }> {}
 
-async function SiteLayout({ children, modal }: SiteLayoutProps) {
+
+ export default async function SiteLayout({ children }: React.PropsWithChildren) {
   const user = await getCachedUser()
 
   return (
@@ -15,11 +13,8 @@ async function SiteLayout({ children, modal }: SiteLayoutProps) {
       <SiteHeader user={user} />
       <main className="flex-1">
         {children}
-        {modal}
       </main>
       <SiteFooter />
     </div>
   )
 }
-
-export default SiteLayout
