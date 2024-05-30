@@ -1,6 +1,6 @@
-import { currentUser } from "@clerk/nextjs";
-import { unstable_noStore as noStore } from "next/cache";
-import { cache } from "react";
+import { cache } from "react"
+import { unstable_noStore as noStore } from "next/cache"
+import { currentUser } from "@clerk/nextjs/server"
 
 /**
  * Cache is used with a data-fetching function like fetch to share a data snapshot between components.
@@ -8,11 +8,11 @@ import { cache } from "react";
  * @see https://react.dev/reference/react/cache#reference
  */
 export const getCacheduser = cache(async () => {
-  noStore();
+  noStore()
   try {
-    return await currentUser();
+    return await currentUser()
   } catch (err) {
-    console.error(err);
-    return null;
+    console.error(err)
+    return null
   }
-});
+})

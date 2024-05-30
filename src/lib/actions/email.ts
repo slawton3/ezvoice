@@ -1,7 +1,7 @@
-"use server";
+"use server"
 
-import { db } from "@/db";
-import { emailSubscriptions } from "@/db/schema";
+import { db } from "@/db"
+import { emailSubscriptions } from "@/db/schema"
 
 export const addEmailSubscriber = async (email: string) => {
   try {
@@ -10,12 +10,12 @@ export const addEmailSubscriber = async (email: string) => {
       .values({
         email,
       })
-      .returning();
+      .returning()
 
-    return newEmailSubscriber;
+    return newEmailSubscriber
   } catch (error) {
-    console.error(error);
+    console.error(error)
     // handle error
-    return null;
+    return null
   }
-};
+}

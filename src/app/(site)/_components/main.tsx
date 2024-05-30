@@ -1,6 +1,6 @@
-import { Shell } from "@/components/shell";
+import { Shell } from "@/components/shell"
 
-import SignupForm from "./signup-form";
+import SignupForm from "./signup-form"
 
 export async function Main() {
   return (
@@ -10,17 +10,18 @@ export async function Main() {
           className="animate-fade-up text-balance font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl"
           style={{ animationDelay: "0.20s", animationFillMode: "both" }}
         >
-          Professional Invoices <br />
+          Invoice Integrations <br />
           Made <span className="text-primary">Simple</span>
         </h1>
         <p
           className="max-w-2xl animate-fade-up text-balance leading-normal text-muted-foreground sm:text-xl sm:leading-8"
           style={{ animationDelay: "0.30s", animationFillMode: "both" }}
         >
-          Create custom invoice templates for QuickBooks Online, Xero, and more
+          Integrate your favorite invoicing tools with ease. <br />
+          No more manual data entry, no more mistakes. <br />
         </p>
         <div
-          className="flex flex-col animate-fade-up flex-wrap items-center justify-center gap-4"
+          className="flex animate-fade-up flex-col flex-wrap items-center justify-center gap-4"
           style={{ animationDelay: "0.40s", animationFillMode: "both" }}
         >
           <p className="text-foreground">
@@ -41,5 +42,5 @@ export async function Main() {
         <Technologies />
       </ContentSection> */}
     </Shell>
-  );
+  )
 }

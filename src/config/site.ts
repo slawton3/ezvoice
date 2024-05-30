@@ -1,13 +1,13 @@
-import type { FooterItem, MainNavItem } from "@/types";
+import type { FooterItem, MainNavItem } from "@/types"
 
-export type SiteConfig = typeof siteConfig;
+export type SiteConfig = typeof siteConfig
 
 const links = {
   x: "https://twitter.com/snlwtn",
   github: "https://github.com/slawton3/ezvoice",
   githubAccount: "https://github.com/slawton3",
   calDotCom: "https://cal.com/seanlawton",
-};
+}
 
 export const siteConfig = {
   name: "ezVoice",
@@ -43,51 +43,46 @@ export const siteConfig = {
   ] satisfies MainNavItem[],
   footerNav: [
     {
-      title: "Credits",
+      title: "Getting started",
       items: [
         {
-          title: "ezVoice",
-          href: "https://ezvoice.io",
-          external: true,
+          title: "Getting started",
+          href: "#",
+          external: false,
         },
         {
-          title: "Taxonomy",
-          href: "https://tx.shadcn.com/",
-          external: true,
+          title: "FAQ",
+          href: "#",
+          external: false,
         },
         {
-          title: "shadcn/ui",
-          href: "https://ui.shadcn.com",
-          external: true,
-        },
-        {
-          title: "T3 Stack",
-          href: "https://create.t3.gg/",
-          external: true,
+          title: "Blog",
+          href: "/blog",
+          external: false,
         },
       ],
     },
     {
-      title: "Our Company",
+      title: "Company",
       items: [
         {
-          title: "About",
-          href: "/#",
+          title: "Meet us",
+          href: "/about",
           external: false,
         },
         {
-          title: "Contact",
-          href: "/#",
+          title: "Contact us",
+          href: "/contact",
           external: false,
         },
         {
-          title: "Terms",
-          href: "/#",
+          title: "Terms of service",
+          href: "/terms",
           external: false,
         },
         {
           title: "Privacy",
-          href: "/#",
+          href: "/privacy",
           external: false,
         },
       ],
@@ -96,7 +91,7 @@ export const siteConfig = {
       title: "Social",
       items: [
         {
-          title: "X",
+          title: "X (Twitter)",
           href: links.x,
           external: true,
         },
@@ -113,4 +108,4 @@ export const siteConfig = {
       ],
     },
   ] satisfies FooterItem[],
-};
+}

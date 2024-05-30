@@ -1,7 +1,4 @@
-import * as React from "react";
-
-import { Main } from "./_components/main";
-import { MainSkeleton } from "./_components/main-skeleton";
+import { Main } from "./_components/main"
 
 export default function IndexPage() {
   /**
@@ -11,9 +8,5 @@ export default function IndexPage() {
    * @see https://nextjs.org/docs/app/building-your-application/data-fetching/patterns#parallel-data-fetching
    */
 
-  return (
-    <React.Suspense fallback={<MainSkeleton />}>
-      <Main />
-    </React.Suspense>
-  );
+  return <Main />
 }
