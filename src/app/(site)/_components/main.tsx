@@ -10,15 +10,16 @@ export async function Main() {
           className="animate-fade-up text-balance font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl"
           style={{ animationDelay: "0.20s", animationFillMode: "both" }}
         >
-          Invoice Integrations <br />
-          Made <span className="text-primary">Simple</span>
+          ClickUp & Quickbooks
+          <br />
+          Integration Made<span className="text-primary"> Simple</span>
         </h1>
         <p
           className="max-w-2xl animate-fade-up text-balance leading-normal text-muted-foreground sm:text-xl sm:leading-8"
           style={{ animationDelay: "0.30s", animationFillMode: "both" }}
         >
-          Integrate your favorite invoicing tools with ease. <br />
-          No more manual data entry, no more mistakes. <br />
+          Connect your ClickUp and Quickbooks accounts to automate your
+          workflows and save time.
         </p>
         <div
           className="flex animate-fade-up flex-col flex-wrap items-center justify-center gap-4"

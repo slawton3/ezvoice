@@ -11,8 +11,9 @@ const links = {
 
 export const siteConfig = {
   name: "ezVoice",
+  title: "ezVoice - ClickUp and Quickbooks Integration",
   description:
-    "ezVoice a custom invoice template creation platform for integrating with QuickBooks Online, Xero, and other accounting software.",
+    "ezVoice is a ClickUp and Quickbooks integration that automates your workflows and saves you time.",
   url: "https://ezvoice.io",
   ogImage: "https://ezvoice.io/opengraph-image.png",
   links,
