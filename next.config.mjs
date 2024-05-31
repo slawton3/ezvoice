@@ -17,6 +17,8 @@ const nextConfig = {
     ],
     unoptimized: true,
   },
+  reactStrictMode: true,
+  
 }
 
 export default withContentlayer(nextConfig)
