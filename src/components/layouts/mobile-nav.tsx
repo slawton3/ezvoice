@@ -1,8 +1,10 @@
 // "use client";
 
-import { siteConfig } from "@/config/site";
-import Link from "next/link";
-import { Icons } from "../icons";
+import Link from "next/link"
+
+import { siteConfig } from "@/config/site"
+
+import { Icons } from "../icons"
 
 // import type { MainNavItem } from "@/types";
 // import Link from "next/link";
@@ -138,12 +140,12 @@ import { Icons } from "../icons";
 
 const MobileNav = () => {
   return (
-    <Link href="/" className=" items-center space-x-2 flex lg:hidden">
+    <Link href="/" className=" flex items-center space-x-2 lg:hidden">
       <Icons.logo className="size-8" aria-hidden="true" />
       <span className=" font-bold lg:hidden">{siteConfig.name}</span>
       <span className="sr-only">Home</span>
     </Link>
-  );
-};
+  )
+}
 
-export { MobileNav };
+export { MobileNav }

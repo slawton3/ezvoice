@@ -1,25 +1,26 @@
 /** Originally from `t3-env-docs`
  * @link https://github.com/t3-oss/t3-env/blob/main/docs/src/components/mdx/code-block.tsx
  */
-import { CheckCircledIcon } from "@radix-ui/react-icons";
-import * as React from "react";
-import JSONPretty from "react-json-pretty";
-import { Button } from "../ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
-import { ScrollArea } from "../ui/scroll-area";
+import * as React from "react"
+import { CheckCircledIcon } from "@radix-ui/react-icons"
+import JSONPretty from "react-json-pretty"
+
+import { Button } from "../ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card"
+import { ScrollArea } from "../ui/scroll-area"
 
 // empty json string
-const emptyJson = "{'error': 'general model cannot be written to json'}";
+const emptyJson = "{'error': 'general model cannot be written to json'}"
 
 type CodeBlockProps = React.DetailedHTMLProps<
   React.HTMLAttributes<HTMLPreElement>,
   HTMLPreElement
 > & {
-  raw: string;
-};
+  raw: string
+}
 
 export function CodeWrapper({ children, raw, ...props }: CodeBlockProps) {
-  const [copied, setCopied] = React.useState<boolean>(false);
+  const [copied, setCopied] = React.useState<boolean>(false)
   return (
     <Card>
       <CardHeader>
@@ -35,8 +36,8 @@ export function CodeWrapper({ children, raw, ...props }: CodeBlockProps) {
             size="sm"
             variant="outline"
             onClick={async () => {
-              await navigator.clipboard.writeText(raw);
-              setCopied(true);
+              await navigator.clipboard.writeText(raw)
+              setCopied(true)
             }}
           >
             {copied ? (
@@ -48,5 +49,5 @@ export function CodeWrapper({ children, raw, ...props }: CodeBlockProps) {
         </ScrollArea>
       </CardContent>
     </Card>
-  );
+  )
 }

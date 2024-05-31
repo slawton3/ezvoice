@@ -1,12 +1,12 @@
-import { cn } from "@/lib/utils";
-import { Card, CardDescription, CardTitle } from "@/components/ui/card";
-import { Icons } from "@/components/icons";
+import { cn } from "@/lib/utils"
+import { Card, CardDescription, CardTitle } from "@/components/ui/card"
+import { Icons } from "@/components/icons"
 
 interface EmptyCardProps extends React.ComponentPropsWithoutRef<typeof Card> {
-  title: string;
-  description?: string;
-  action?: React.ReactNode;
-  icon?: keyof typeof Icons;
+  title: string
+  description?: string
+  action?: React.ReactNode
+  icon?: keyof typeof Icons
 }
 
 export function EmptyCard({
@@ -17,13 +17,13 @@ export function EmptyCard({
   className,
   ...props
 }: EmptyCardProps) {
-  const Icon = Icons[icon];
+  const Icon = Icons[icon]
 
   return (
     <Card
       className={cn(
         "flex w-full flex-col items-center justify-center space-y-6 bg-transparent p-16",
-        className,
+        className
       )}
       {...props}
     >
@@ -36,5 +36,5 @@ export function EmptyCard({
       </div>
       {action ? action : null}
     </Card>
-  );
+  )
 }

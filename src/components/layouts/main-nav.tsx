@@ -1,16 +1,16 @@
-"use client";
+"use client"
 
-import type { MainNavItem } from "@/types";
-import Link from "next/link";
-import * as React from "react";
+import * as React from "react"
+import Link from "next/link"
+import type { MainNavItem } from "@/types"
 
-import { Icons } from "@/components/icons";
-import { NavigationMenuLink } from "@/components/ui/navigation-menu";
-import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
+import { siteConfig } from "@/config/site"
+import { cn } from "@/lib/utils"
+import { NavigationMenuLink } from "@/components/ui/navigation-menu"
+import { Icons } from "@/components/icons"
 
 interface MainNavProps {
-  items?: MainNavItem[];
+  items?: MainNavItem[]
 }
 
 export function MainNav({ items }: MainNavProps) {
@@ -101,7 +101,7 @@ export function MainNav({ items }: MainNavProps) {
         </NavigationMenuList>
       </NavigationMenu> */}
     </div>
-  );
+  )
 }
 
 const ListItem = React.forwardRef<
@@ -116,7 +116,7 @@ const ListItem = React.forwardRef<
           href={String(href)}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className,
+            className
           )}
           {...props}
         >
@@ -127,6 +127,6 @@ const ListItem = React.forwardRef<
         </Link>
       </NavigationMenuLink>
     </li>
-  );
-});
-ListItem.displayName = "ListItem";
+  )
+})
+ListItem.displayName = "ListItem"

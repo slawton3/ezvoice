@@ -1,5 +1,4 @@
-export const unknownError =
-  "An unknown error occurred. Please try again later.";
+export const unknownError = "An unknown error occurred. Please try again later."
 
 export const redirects = {
   toLogin: "/signin",
@@ -8,6 +7,6 @@ export const redirects = {
   afterLogout: "/",
   toVerify: "/verify-email",
   afterVerify: "/dashboard",
-} as const;
+} as const
 
-export const dbPrefix = "ezvoice";
+export const dbPrefix = "ezvoice"

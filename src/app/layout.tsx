@@ -1,17 +1,16 @@
-import { env } from "@/env.js";
-import { ClerkProvider } from "@clerk/nextjs";
-import type { Metadata, Viewport } from "next";
+import type { Metadata, Viewport } from "next"
+import { env } from "@/env.js"
+import { ClerkProvider } from "@clerk/nextjs"
 
-import "@/styles/globals.css";
+import "@/styles/globals.css"
 
-import { siteConfig } from "@/config/site";
+import Script from "next/script"
 
-import { ThemeProvider } from "@/components/providers";
-
-import { Toaster } from "@/components/ui/sonner";
-import { fontHeading, fontMono, fontSans } from "@/lib/fonts";
-import { absoluteUrl, cn } from "@/lib/utils";
-import Script from "next/script";
+import { siteConfig } from "@/config/site"
+import { fontHeading, fontMono, fontSans } from "@/lib/fonts"
+import { absoluteUrl, cn } from "@/lib/utils"
+import { Toaster } from "@/components/ui/sonner"
+import { ThemeProvider } from "@/components/providers"
 
 export const metadata: Metadata = {
   metadataBase: new URL(env.NEXT_PUBLIC_APP_URL),
@@ -54,7 +53,7 @@ export const metadata: Metadata = {
     icon: "/icon.png",
   },
   manifest: absoluteUrl("/site.webmanifest"),
-};
+}
 
 export const viewport: Viewport = {
   colorScheme: "dark light",
@@ -62,7 +61,7 @@ export const viewport: Viewport = {
     { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "black" },
   ],
-};
+}
 
 export default function RootLayout({ children }: React.PropsWithChildren) {
   return (
@@ -75,7 +74,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
               "min-h-screen bg-background font-sans antialiased",
               fontSans.variable,
               fontMono.variable,
-              fontHeading.variable,
+              fontHeading.variable
             )}
           >
             <ThemeProvider
@@ -92,7 +91,7 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
         </html>
       </ClerkProvider>
     </>
-  );
+  )
 }
 
 function Scripts() {
@@ -115,5 +114,5 @@ function Scripts() {
         crossOrigin="anonymous"
       ></Script>
     </div>
-  );
+  )
 }

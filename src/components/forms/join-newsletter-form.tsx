@@ -1,14 +1,15 @@
-"use client";
+"use client"
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { PaperPlaneIcon } from "@radix-ui/react-icons";
-import * as React from "react";
-import { useForm } from "react-hook-form";
-import { toast } from "sonner";
-import type { z } from "zod";
+import * as React from "react"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { PaperPlaneIcon } from "@radix-ui/react-icons"
+import { useForm } from "react-hook-form"
+import { toast } from "sonner"
+import type { z } from "zod"
 
-import { Icons } from "@/components/icons";
-import { Button } from "@/components/ui/button";
+import { addEmailSubscriber } from "@/lib/actions/email"
+import { emailSchema } from "@/lib/validations/notification"
+import { Button } from "@/components/ui/button"
 import {
   Form,
   FormControl,
@@ -16,15 +17,14 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { addEmailSubscriber } from "@/lib/actions/email";
-import { emailSchema } from "@/lib/validations/notification";
+} from "@/components/ui/form"
+import { Input } from "@/components/ui/input"
+import { Icons } from "@/components/icons"
 
-type Inputs = z.infer<typeof emailSchema>;
+type Inputs = z.infer<typeof emailSchema>
 
 export function JoinNewsletterForm() {
-  const [isPending, startTransition] = React.useTransition();
+  const [isPending, startTransition] = React.useTransition()
 
   // react-hook-form
   const form = useForm<Inputs>({
@@ -32,15 +32,15 @@ export function JoinNewsletterForm() {
     defaultValues: {
       email: "",
     },
-  });
+  })
 
   function onSubmit(data: Inputs) {
     startTransition(async () => {
-      await addEmailSubscriber(data.email);
+      await addEmailSubscriber(data.email)
 
-      toast.success("You have been subscribed to our newsletter.");
-      form.reset();
-    });
+      toast.success("You have been subscribed to our newsletter.")
+      form.reset()
+    })
   }
 
   return (
@@ -84,5 +84,5 @@ export function JoinNewsletterForm() {
         />
       </form>
     </Form>
-  );
+  )
 }
