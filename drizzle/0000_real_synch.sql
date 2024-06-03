@@ -1,3 +1,9 @@
+DO $$ BEGIN
+ CREATE TYPE "name" AS ENUM('clickup', 'quickbooks');
+EXCEPTION
+ WHEN duplicate_object THEN null;
+END $$;
+--> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "addresses" (
 	"id" varchar(30) PRIMARY KEY NOT NULL,
 	"line1" text,
@@ -20,6 +26,25 @@ CREATE TABLE IF NOT EXISTS "customers" (
 	"updated_at" timestamp DEFAULT current_timestamp,
 	CONSTRAINT "customers_store_connect_id_unique" UNIQUE("store_connect_id"),
 	CONSTRAINT "customers_stripe_customer_id_unique" UNIQUE("stripe_customer_id")
+);
+--> statement-breakpoint
+CREATE TABLE IF NOT EXISTS "email_subscriptions" (
+	"id" serial PRIMARY KEY NOT NULL,
+	"email" varchar(256),
+	"created_at" timestamp (3) DEFAULT '2024-06-01T17:06:56.468Z',
+	"updated_at" timestamp (3),
+	"deleted_at" timestamp (3),
+	CONSTRAINT "email_subscriptions_email_unique" UNIQUE("email")
+);
+--> statement-breakpoint
+CREATE TABLE IF NOT EXISTS "integrations" (
+	"id" varchar(30) PRIMARY KEY NOT NULL,
+	"user_id" varchar(36),
+	"name" "name" NOT NULL,
+	"refresh_token" text NOT NULL,
+	"created_at" timestamp DEFAULT now() NOT NULL,
+	"updated_at" timestamp DEFAULT current_timestamp,
+	CONSTRAINT "integrations_refresh_token_unique" UNIQUE("refresh_token")
 );
 --> statement-breakpoint
 CREATE TABLE IF NOT EXISTS "notifications" (
@@ -47,6 +72,4 @@ CREATE TABLE IF NOT EXISTS "payments" (
 	"updated_at" timestamp DEFAULT current_timestamp
 );
 --> statement-breakpoint
-ALTER TABLE "email_subscriptions" ALTER COLUMN "created_at" SET DEFAULT '2024-05-29T02:20:12.177Z';--> statement-breakpoint
-CREATE INDEX IF NOT EXISTS "customers_stripe_customer_id_idx" ON "customers" ("stripe_customer_id");--> statement-breakpoint
-ALTER TABLE "email_subscriptions" ADD CONSTRAINT "email_subscriptions_email_unique" UNIQUE("email");
+CREATE INDEX IF NOT EXISTS "customers_stripe_customer_id_idx" ON "customers" ("stripe_customer_id");

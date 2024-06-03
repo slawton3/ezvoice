@@ -18,6 +18,14 @@ export const env = createEnv({
     STRIPE_WEBHOOK_SECRET: z.string().min(1),
     STRIPE_STD_MONTHLY_PRICE_ID: z.string().min(1),
     STRIPE_PRO_MONTHLY_PRICE_ID: z.string().min(1),
+    INTUIT_OAUTH_CLIENT_ID: z.string().min(1),
+    INTUIT_OAUTH_CLIENT_SECRET: z.string().min(1),
+    INTUIT_REDIRECT_URI: z.string().min(1),
+    CRYPTO_SECRET: z.string().min(1),
+    QUICKBOOKS_WEBHOOK_VERIFIER: z.string().min(1),
+    CLICKUP_CLIENT_ID: z.string().min(1),
+    CLICKUP_CLIENT_SECRET: z.string().min(1),
+    CLICKUP_REDIRECT_URI: z.string().min(1),
   },
 
   /**
@@ -54,6 +62,14 @@ export const env = createEnv({
     STRIPE_WEBHOOK_SECRET: process.env.STRIPE_WEBHOOK_SECRET,
     STRIPE_STD_MONTHLY_PRICE_ID: process.env.STRIPE_STD_MONTHLY_PRICE_ID,
     STRIPE_PRO_MONTHLY_PRICE_ID: process.env.STRIPE_PRO_MONTHLY_PRICE_ID,
+    INTUIT_OAUTH_CLIENT_ID: process.env.INTUIT_OAUTH_CLIENT_ID,
+    INTUIT_OAUTH_CLIENT_SECRET: process.env.INTUIT_OAUTH_CLIENT_SECRET,
+    INTUIT_REDIRECT_URI: process.env.INTUIT_REDIRECT_URI,
+    CRYPTO_SECRET: process.env.CRYPTO_SECRET,
+    QUICKBOOKS_WEBHOOK_VERIFIER: process.env.QUICKBOOKS_WEBHOOK_VERIFIER,
+    CLICKUP_CLIENT_ID: process.env.CLICKUP_CLIENT_ID,
+    CLICKUP_CLIENT_SECRET: process.env.CLICKUP_CLIENT_SECRET,
+    CLICKUP_REDIRECT_URI: process.env.CLICKUP_REDIRECT_URI,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially

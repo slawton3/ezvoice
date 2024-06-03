@@ -1,36 +1,54 @@
+import Link from "next/link"
+
+import { getCachedUser } from "@/lib/queries/user"
+import { cn } from "@/lib/utils"
+import { buttonVariants } from "@/components/ui/button"
+import {
+  PageActions,
+  PageHeader,
+  PageHeaderDescription,
+  PageHeaderHeading,
+} from "@/components/layouts/page-header"
 import { Shell } from "@/components/shell"
 
-import SignupForm from "./signup-form"
-
 export async function Main() {
+  const user = await getCachedUser()
   return (
     <Shell className="max-w-6xl">
-      <section className="mx-auto flex w-full max-w-5xl flex-col items-center justify-center gap-8 py-24 text-center md:py-32">
-        <h1
-          className="animate-fade-up text-balance font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl"
+      <PageHeader
+        as="section"
+        className="mx-auto items-center gap-2 text-center"
+        withPadding
+      >
+        <PageHeaderHeading
+          className=" animate-fade-up"
           style={{ animationDelay: "0.20s", animationFillMode: "both" }}
         >
-          ClickUp & Quickbooks
-          <br />
-          Integration Made<span className="text-primary"> Simple</span>
-        </h1>
-        <p
-          className="max-w-2xl animate-fade-up text-balance leading-normal text-muted-foreground sm:text-xl sm:leading-8"
+          ClickUp Quickbooks Integration <br />
+          <p className="text-primary">Made Simple</p>
+        </PageHeaderHeading>
+        <PageHeaderDescription
+          className="max-w-[40.875rem] animate-fade-up"
           style={{ animationDelay: "0.30s", animationFillMode: "both" }}
         >
-          Connect your ClickUp and Quickbooks accounts to automate your
-          workflows and save time.
-        </p>
-        <div
-          className="flex animate-fade-up flex-col flex-wrap items-center justify-center gap-4"
+          Connect your ClickUp account with Quickbooks in minutes and start
+          syncing your data.
+        </PageHeaderDescription>
+        <PageActions
+          className="animate-fade-up"
           style={{ animationDelay: "0.40s", animationFillMode: "both" }}
         >
-          <p className="text-foreground">
-            Coming soon - Sign up for early access!
-          </p>
-          <SignupForm />
-        </div>
-      </section>
+          <Link href="/signin" className={cn(buttonVariants())}>
+            Get started
+          </Link>
+          <Link
+            href="/dashboard/stores"
+            className={cn(buttonVariants({ variant: "outline" }))}
+          >
+            See demo
+          </Link>
+        </PageActions>
+      </PageHeader>
 
       {/* <ContentSection
         title="Technologies"

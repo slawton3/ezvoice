@@ -24,21 +24,27 @@ export function DashboardSidebar({
 
   const sidebarNav: SidebarNavItem[] = [
     {
+      title: "Integrations",
+      href: `/dashboard/integrations`,
+      icon: "bash",
+      active: segments.length === 0,
+    },
+    {
       title: "Account",
       href: `/dashboard/account`,
       icon: "avatar",
       active: segments.length === 0,
     },
     {
-      title: "Settings",
-      href: `/dashboard/settings`,
-      icon: "bash",
-      active: segments.length === 0,
-    },
-    {
       title: "Billing",
       href: `/dashboard/billing`,
       icon: "dollarSign",
+      active: segments.length === 0,
+    },
+    {
+      title: "Settings",
+      href: `/dashboard/settings`,
+      icon: "bash",
       active: segments.length === 0,
     },
   ]

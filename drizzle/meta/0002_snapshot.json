@@ -1,6 +1,6 @@
 {
-  "id": "e64bcbd9-82ca-4073-88b8-9695ee4fcb2a",
-  "prevId": "00000000-0000-0000-0000-000000000000",
+  "id": "cb82e07f-689e-4b10-91e3-a15022ab3445",
+  "prevId": "1ba2df17-a124-467c-b1e0-3af95d74d752",
   "version": "5",
   "dialect": "pg",
   "tables": {
@@ -168,7 +168,7 @@
           "type": "timestamp (3)",
           "primaryKey": false,
           "notNull": false,
-          "default": "'2024-06-01T17:06:56.468Z'"
+          "default": "'2024-06-02T03:14:25.056Z'"
         },
         "updated_at": {
           "name": "updated_at",
@@ -222,7 +222,19 @@
           "name": "refresh_token",
           "type": "text",
           "primaryKey": false,
-          "notNull": true
+          "notNull": false
+        },
+        "access_token": {
+          "name": "access_token",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "expires_at": {
+          "name": "expires_at",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
         },
         "created_at": {
           "name": "created_at",
@@ -242,15 +254,7 @@
       "indexes": {},
       "foreignKeys": {},
       "compositePrimaryKeys": {},
-      "uniqueConstraints": {
-        "integrations_refresh_token_unique": {
-          "name": "integrations_refresh_token_unique",
-          "nullsNotDistinct": false,
-          "columns": [
-            "refresh_token"
-          ]
-        }
-      }
+      "uniqueConstraints": {}
     },
     "notifications": {
       "name": "notifications",

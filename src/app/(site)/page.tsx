@@ -1,3 +1,5 @@
+import { headers } from "next/headers"
+
 import { Main } from "./_components/main"
 
 export default function IndexPage() {
@@ -7,6 +9,8 @@ export default function IndexPage() {
    * @see https://www.youtube.com/shorts/A7GGjutZxrs
    * @see https://nextjs.org/docs/app/building-your-application/data-fetching/patterns#parallel-data-fetching
    */
+  const h = headers()
+  console.log(h.get("x-url"))
 
   return <Main />
 }

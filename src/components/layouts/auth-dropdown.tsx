@@ -100,6 +100,13 @@ async function AuthDropdownGroup() {
   return (
     <DropdownMenuGroup>
       <DropdownMenuItem asChild>
+        <Link href={"/dashboard/integrations"}>
+          <DashboardIcon className="mr-2 size-4" aria-hidden="true" />
+          Integrations
+          <DropdownMenuShortcut>⌘D</DropdownMenuShortcut>
+        </Link>
+      </DropdownMenuItem>
+      <DropdownMenuItem asChild>
         <Link href={"/dashboard/account"}>
           <DashboardIcon className="mr-2 size-4" aria-hidden="true" />
           Account

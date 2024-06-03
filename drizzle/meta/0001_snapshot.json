@@ -1,6 +1,6 @@
 {
-  "id": "5c26eabc-ede5-49cf-903f-1beed26c0bcf",
-  "prevId": "9deabb22-e281-4a42-bf5f-be4f0654387f",
+  "id": "1ba2df17-a124-467c-b1e0-3af95d74d752",
+  "prevId": "e64bcbd9-82ca-4073-88b8-9695ee4fcb2a",
   "version": "5",
   "dialect": "pg",
   "tables": {
@@ -122,7 +122,9 @@
       "indexes": {
         "customers_stripe_customer_id_idx": {
           "name": "customers_stripe_customer_id_idx",
-          "columns": ["stripe_customer_id"],
+          "columns": [
+            "stripe_customer_id"
+          ],
           "isUnique": false
         }
       },
@@ -132,12 +134,16 @@
         "customers_store_connect_id_unique": {
           "name": "customers_store_connect_id_unique",
           "nullsNotDistinct": false,
-          "columns": ["store_connect_id"]
+          "columns": [
+            "store_connect_id"
+          ]
         },
         "customers_stripe_customer_id_unique": {
           "name": "customers_stripe_customer_id_unique",
           "nullsNotDistinct": false,
-          "columns": ["stripe_customer_id"]
+          "columns": [
+            "stripe_customer_id"
+          ]
         }
       }
     },
@@ -162,7 +168,7 @@
           "type": "timestamp (3)",
           "primaryKey": false,
           "notNull": false,
-          "default": "'2024-05-29T02:20:12.177Z'"
+          "default": "'2024-06-02T02:52:22.434Z'"
         },
         "updated_at": {
           "name": "updated_at",
@@ -184,9 +190,65 @@
         "email_subscriptions_email_unique": {
           "name": "email_subscriptions_email_unique",
           "nullsNotDistinct": false,
-          "columns": ["email"]
+          "columns": [
+            "email"
+          ]
         }
       }
+    },
+    "integrations": {
+      "name": "integrations",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "varchar(30)",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "user_id": {
+          "name": "user_id",
+          "type": "varchar(36)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "name": {
+          "name": "name",
+          "type": "name",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "refresh_token": {
+          "name": "refresh_token",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "access_token": {
+          "name": "access_token",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "default": "current_timestamp"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
     },
     "notifications": {
       "name": "notifications",
@@ -265,12 +327,16 @@
         "notifications_email_unique": {
           "name": "notifications_email_unique",
           "nullsNotDistinct": false,
-          "columns": ["email"]
+          "columns": [
+            "email"
+          ]
         },
         "notifications_token_unique": {
           "name": "notifications_token_unique",
           "nullsNotDistinct": false,
-          "columns": ["token"]
+          "columns": [
+            "token"
+          ]
         }
       }
     },
@@ -330,7 +396,15 @@
       "uniqueConstraints": {}
     }
   },
-  "enums": {},
+  "enums": {
+    "name": {
+      "name": "name",
+      "values": {
+        "clickup": "clickup",
+        "quickbooks": "quickbooks"
+      }
+    }
+  },
   "schemas": {},
   "_meta": {
     "columns": {},
